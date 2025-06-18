@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Dev Guru - JavaScript Tutorial Series</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          <span>Tech Dev Guru</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>JavaScript Tutorial Series</h3>
+        <button class="close-sidebar" onclick="toggleSidebar()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h4>Getting Started</h4>
+          <a href="#home" class="sidebar-link active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <h4>Core Concepts</h4>
+          <a href="lecture1.html" class="sidebar-link">
+            <i class="fas fa-play"></i>
+            <span>Lecture 1: JavaScript Introduction</span>
+            <div class="lecture-meta">
+              <small>What is JavaScript, Features, History</small>
+            </div>
+          </a>
+          <a href="lecture2.html" class="sidebar-link">
+            <i class="fas fa-play-circle"></i>
+            <span>Lecture 2: JavaScript Execution</span>
+            <div class="lecture-meta">
+              <small>Browser, HTML, Node.js</small>
+            </div>
+          </a>
+          <a href="lecture3.html" class="sidebar-link">
+            <i class="fas fa-server"></i>
+            <span>Lecture 3: Architecture & Rendering</span>
+            <div class="lecture-meta">
+              <small>Client-Server, Render Process</small>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Welcome to
+              <span class="highlight">Tech Dev Guru</span>
+              JavaScript Tutorial Series
+            </h1>
+            <h2 class="hero-subtitle">Master JavaScript Step by Step</h2>
+            <p class="hero-description">
+              Complete JavaScript tutorial series from basics to advanced. Start
+              your coding journey with professional guidance and hands-on
+              practice.
+            </p>
+            <button class="cta-button" onclick="goToLecture2()">
+              <i class="fas fa-play"></i>
+              Start Learning
+            </button>
+          </div>
+          <div class="hero-visual">
+            <div class="code-animation">
+              <div class="code-line">console.log("Hello World!");</div>
+              <div class="code-line">let name = "Developer";</div>
+              <div class="code-line">function greet() { ... }</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview" id="overview">
+        <div class="container">
+          <h2 class="section-title">Course Overview</h2>
+          <div class="overview-grid">
+            <div class="overview-card">
+              <div class="card-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3>Beginner Friendly</h3>
+              <p>
+                Start from the basics with clear explanations and practical
+                examples.
+              </p>
+            </div>
+            <div class="overview-card">
+              <div class="card-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h3>Hands-on Practice</h3>
+              <p>
+                Learn by doing with interactive exercises and real-world
+                projects.
+              </p>
+            </div>
+            <div class="overview-card">
+              <div class="card-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Professional Skills</h3>
+              <p>
+                Build industry-relevant skills used by professional developers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Overlay for mobile sidebar -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Tech Dev Guru. Empowering developers worldwide.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

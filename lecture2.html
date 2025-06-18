@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Dev Guru - JavaScript Tutorial Lecture 2</title>
+    <link rel="stylesheet" href="lecture2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          <span>Tech Dev Guru</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>JavaScript Tutorial Series</h3>
+        <button class="close-sidebar" onclick="toggleSidebar()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h4>Getting Started</h4>
+          <a href="index.html" class="sidebar-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <h4>Core Concepts</h4>
+          <a href="lecture1.html" class="sidebar-link">
+            <i class="fas fa-play"></i>
+            <span>Lecture 1: JavaScript Introduction</span>
+            <div class="lecture-meta">
+              <small>What is JavaScript, Features, History</small>
+            </div>
+          </a>
+          <a href="lecture2.html" class="sidebar-link active">
+            <i class="fas fa-play-circle"></i>
+            <span>Lecture 2: JavaScript Execution</span>
+            <div class="lecture-meta">
+              <small>Browser, HTML, Node.js</small>
+            </div>
+          </a>
+          <a href="lecture3.html" class="sidebar-link">
+            <i class="fas fa-server"></i>
+            <span>Lecture 3: Architecture & Rendering</span>
+            <div class="lecture-meta">
+              <small>Client-Server, Render Process</small>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="highlight">Lecture 2</span>
+              How to Execute JavaScript
+            </h1>
+            <p class="hero-description">
+              Learn the 3 fundamental ways to run JavaScript code: Browser
+              Console, HTML Integration, and Node.js Environment.
+            </p>
+            <div class="steps-overview">
+              <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-text">Browser Console</span>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-text">HTML + CSS</span>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-text">Node.js</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="methods" id="methods">
+        <div class="container">
+          <h2 class="section-title">3 Ways to Execute JavaScript</h2>
+
+          <div class="method-card">
+            <div class="method-header">
+              <div class="method-icon">
+                <i class="fas fa-browser"></i>
+              </div>
+              <div class="method-info">
+                <h3>Step 1: Browser Console</h3>
+                <p>Execute JavaScript directly in your browser</p>
+              </div>
+            </div>
+            <div class="method-content">
+              <div class="instructions">
+                <h4>How to open Browser Console:</h4>
+                <ul>
+                  <li>
+                    Press <kbd>F12</kbd> or
+                    <kbd>Ctrl + Shift + I</kbd> (Windows/Linux)
+                  </li>
+                  <li>Press <kbd>Cmd + Option + I</kbd> (Mac)</li>
+                  <li>Right-click → "Inspect" → "Console" tab</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-header">
+              <div class="method-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="method-info">
+                <h3>Step 2: HTML + CSS Integration</h3>
+                <p>Link JavaScript with HTML and CSS files</p>
+              </div>
+            </div>
+            <div class="method-content">
+              <div class="code-example">
+                <h4>File Structure:</h4>
+                <div class="file-structure">
+                  <div class="file">📄 index.html</div>
+                  <div class="file">🎨 style.css</div>
+                  <div class="file">⚡ script.js</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-header">
+              <div class="method-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="method-info">
+                <h3>Step 3: Node.js Environment</h3>
+                <p>Run JavaScript on your computer (server-side)</p>
+              </div>
+            </div>
+            <div class="method-content">
+              <div class="instructions">
+                <h4>Setup Node.js:</h4>
+                <ol>
+                  <li>
+                    Download Node.js from
+                    <a href="https://nodejs.org" target="_blank">nodejs.org</a>
+                  </li>
+                  <li>Install Node.js on your computer</li>
+                  <li>Open terminal/command prompt</li>
+                  <li>Type: <code>node filename.js</code></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Overlay for mobile sidebar -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Tech Dev Guru. Empowering developers worldwide.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="lecture2.js"></script>
+  </body>
+</html>

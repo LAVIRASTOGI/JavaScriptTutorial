@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Dev Guru - JavaScript Tutorial Lecture 1</title>
+    <link rel="stylesheet" href="lecture1.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          <span>Tech Dev Guru</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>JavaScript Tutorial Series</h3>
+        <button class="close-sidebar" onclick="toggleSidebar()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h4>Getting Started</h4>
+          <a href="index.html" class="sidebar-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <h4>Core Concepts</h4>
+          <a href="lecture1.html" class="sidebar-link active">
+            <i class="fas fa-play"></i>
+            <span>Lecture 1: JavaScript Introduction</span>
+            <div class="lecture-meta">
+              <small>What is JavaScript, Features, History</small>
+            </div>
+          </a>
+          <a href="lecture2.html" class="sidebar-link">
+            <i class="fas fa-play-circle"></i>
+            <span>Lecture 2: JavaScript Execution</span>
+            <div class="lecture-meta">
+              <small>Browser, HTML, Node.js</small>
+            </div>
+          </a>
+          <a href="lecture3.html" class="sidebar-link">
+            <i class="fas fa-server"></i>
+            <span>Lecture 3: Architecture & Rendering</span>
+            <div class="lecture-meta">
+              <small>Client-Server, Render Process</small>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="highlight">Lecture 1</span>
+              Introduction to JavaScript
+            </h1>
+            <p class="hero-description">
+              Discover what JavaScript is, explore its features, and understand
+              its evolution from a simple scripting language to the backbone of
+              modern web development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content" id="content">
+        <div class="container">
+          <h2 class="section-title">What is JavaScript?</h2>
+
+          <div class="image-card">
+            <div class="image-header">
+              <h3>JavaScript Fundamentals</h3>
+              <p>Understanding the core concepts and syntax of JavaScript</p>
+            </div>
+            <div class="image-container">
+              <img
+                src="images/javascript1.png"
+                alt="JavaScript Fundamentals Overview"
+                class="js-image"
+              />
+            </div>
+          </div>
+
+          <div class="image-card">
+            <div class="image-header">
+              <h3>JavaScript Features & Capabilities</h3>
+              <p>
+                Exploring the powerful features that make JavaScript versatile
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="images/javascript3.png"
+                alt="JavaScript Features and Capabilities"
+                class="js-image"
+              />
+            </div>
+          </div>
+
+          <div class="image-card">
+            <div class="image-header">
+              <h3>JavaScript History & Evolution</h3>
+              <p>
+                The journey from a simple scripting language to modern
+                JavaScript
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="images/javascript2.png"
+                alt="JavaScript History and Evolution Timeline"
+                class="js-image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Overlay for mobile sidebar -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Tech Dev Guru. Empowering developers worldwide.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="lecture1.js"></script>
+  </body>
+</html>

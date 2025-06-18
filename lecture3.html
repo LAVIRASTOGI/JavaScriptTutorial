@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Dev Guru - JavaScript Tutorial Lecture 3</title>
+    <link rel="stylesheet" href="lecture3.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          <span>Tech Dev Guru</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>JavaScript Tutorial Series</h3>
+        <button class="close-sidebar" onclick="toggleSidebar()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h4>Getting Started</h4>
+          <a href="index.html" class="sidebar-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <h4>Core Concepts</h4>
+          <a href="lecture1.html" class="sidebar-link">
+            <i class="fas fa-play"></i>
+            <span>Lecture 1: JavaScript Introduction</span>
+            <div class="lecture-meta">
+              <small>What is JavaScript, Features, History</small>
+            </div>
+          </a>
+          <a href="lecture2.html" class="sidebar-link">
+            <i class="fas fa-play-circle"></i>
+            <span>Lecture 2: JavaScript Execution</span>
+            <div class="lecture-meta">
+              <small>Browser, HTML, Node.js</small>
+            </div>
+          </a>
+          <a href="lecture3.html" class="sidebar-link active">
+            <i class="fas fa-server"></i>
+            <span>Lecture 3: Architecture & Rendering</span>
+            <div class="lecture-meta">
+              <small>Client-Server, Render Process</small>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="highlight">Lecture 3</span>
+              JavaScript Architecture & Processing
+            </h1>
+            <p class="hero-description">
+              Understanding how JavaScript works behind the scenes - from
+              client-server architecture to rendering processes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content" id="content">
+        <div class="container">
+          <h2 class="section-title">JavaScript Architecture Overview</h2>
+
+          <div class="image-card">
+            <div class="image-header">
+              <h3>Client-Server Architecture</h3>
+              <p>
+                Understanding the relationship between client and server in web
+                applications
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="images/clientServer.png"
+                alt="Client Server Architecture Diagram"
+                class="architecture-image"
+              />
+            </div>
+            <div class="image-description">
+              <p>
+                This diagram illustrates how JavaScript applications communicate
+                between the client (browser) and server, showing the flow of
+                data and requests in modern web development.
+              </p>
+            </div>
+          </div>
+
+          <div class="image-card">
+            <div class="image-header">
+              <h3>JavaScript Rendering Process</h3>
+              <p>
+                How JavaScript code is processed and executed in the browser
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="images/renderprocess.jpg"
+                alt="JavaScript Render Process Diagram"
+                class="architecture-image"
+              />
+            </div>
+            <div class="image-description">
+              <p>
+                This diagram shows the step-by-step process of how JavaScript
+                code is parsed, compiled, and executed by the browser's
+                JavaScript engine.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Overlay for mobile sidebar -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Tech Dev Guru. Empowering developers worldwide.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="lecture3.js"></script>
+  </body>
+</html>
