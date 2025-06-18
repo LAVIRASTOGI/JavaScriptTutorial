@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Dev Guru - JavaScript Tutorial Lecture 4</title>
+    <link rel="stylesheet" href="lecture4.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          <span>Tech Dev Guru</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>JavaScript Tutorial Series</h3>
+        <button class="close-sidebar" onclick="toggleSidebar()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h4>Getting Started</h4>
+          <a href="index.html" class="sidebar-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <h4>Core Concepts</h4>
+          <a href="lecture1.html" class="sidebar-link">
+            <i class="fas fa-play"></i>
+            <span>Lecture 1: JavaScript Introduction</span>
+            <div class="lecture-meta">
+              <small>What is JavaScript, Features, History</small>
+            </div>
+          </a>
+          <a href="lecture2.html" class="sidebar-link">
+            <i class="fas fa-play-circle"></i>
+            <span>Lecture 2: JavaScript Execution</span>
+            <div class="lecture-meta">
+              <small>Browser, HTML, Node.js</small>
+            </div>
+          </a>
+          <a href="lecture3.html" class="sidebar-link">
+            <i class="fas fa-server"></i>
+            <span>Lecture 3: Architecture & Rendering</span>
+            <div class="lecture-meta">
+              <small>Client-Server, Render Process</small>
+            </div>
+          </a>
+          <a href="lecture4.html" class="sidebar-link active">
+            <i class="fas fa-code-branch"></i>
+            <span>Lecture 4: Script Loading Behavior</span>
+            <div class="lecture-meta">
+              <small>Default, Async, Defer</small>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="highlight">Lecture 4</span>
+              JavaScript Script Loading Behavior
+            </h1>
+            <p class="hero-description">
+              Understanding how different script tags affect HTML parsing and
+              JavaScript execution timing with default, async, and defer
+              attributes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content" id="content">
+        <div class="container">
+          <h2 class="section-title">Script Loading Methods</h2>
+
+          <!-- Example 1: Default Behavior -->
+          <div class="example-card">
+            <div class="example-header">
+              <h3>
+                Example 1: Script in &lt;body&gt; without async or defer
+                (default behavior)
+              </h3>
+            </div>
+            <div class="code-section">
+              <div class="code-container">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Script in Body&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Step 1&lt;/h1&gt;
+  
+  &lt;script&gt;
+    console.log("🟢 Script Executed: DOM parsing is paused here");
+    document.body.style.background = "lightyellow";
+  &lt;/script&gt;
+  
+  &lt;h2&gt;Step 2&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+              <div class="behavior-explanation">
+                <h4>Behavior:</h4>
+                <ul>
+                  <li><strong>Step 1 is parsed and rendered.</strong></li>
+                  <li>
+                    Browser <strong>stops parsing</strong> when it sees the
+                    &lt;script&gt;.
+                  </li>
+                  <li>The script is <strong>executed immediately</strong>.</li>
+                  <li>
+                    Only after the script is done, Step 2 is parsed and shown.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Example 2: Async -->
+          <div class="example-card">
+            <div class="example-header">
+              <h3>Example 2: Script in &lt;body&gt; with async</h3>
+            </div>
+            <div class="code-section">
+              <div class="code-container">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Script Async&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Step A&lt;/h1&gt;
+  
+  &lt;script async src="async-script.js"&gt;&lt;/script&gt;
+  
+  &lt;h2&gt;Step B&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+              <div class="behavior-explanation">
+                <h4>Behavior:</h4>
+                <ul>
+                  <li><strong>HTML parsing continues.</strong></li>
+                  <li><strong>JS is fetched in background.</strong></li>
+                  <li>
+                    When it finishes downloading, the browser
+                    <strong>pauses parsing</strong>, executes the script, then
+                    continues.
+                  </li>
+                  <li>
+                    Execution timing is <strong>not guaranteed</strong> relative
+                    to other scripts.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Example 3: Defer -->
+          <div class="example-card">
+            <div class="example-header">
+              <h3>Example 3: Script in &lt;body&gt; with defer</h3>
+            </div>
+            <div class="code-section">
+              <div class="code-container">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Script Defer&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Step X&lt;/h1&gt;
+  
+  &lt;script defer src="defer-script.js"&gt;&lt;/script&gt;
+  
+  &lt;h2&gt;Step Y&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+              <div class="behavior-explanation">
+                <h4>Behavior:</h4>
+                <ul>
+                  <li><strong>HTML is parsed fully.</strong></li>
+                  <li>
+                    Script is <strong>downloaded in parallel</strong>, but
+                    <strong>executed after DOM is ready</strong>, before
+                    DOMContentLoaded.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comparison Summary -->
+          <div class="comparison-section">
+            <h3>Quick Comparison</h3>
+            <div class="comparison-grid">
+              <div class="comparison-item">
+                <div class="comparison-header default">
+                  <h4>Default (No attributes)</h4>
+                </div>
+                <div class="comparison-content">
+                  <p><strong>Parsing:</strong> Blocked</p>
+                  <p><strong>Download:</strong> Immediate</p>
+                  <p><strong>Execution:</strong> Immediate</p>
+                  <p>
+                    <strong>Use Case:</strong> Critical scripts that must run
+                    before DOM continues
+                  </p>
+                </div>
+              </div>
+
+              <div class="comparison-item">
+                <div class="comparison-header async">
+                  <h4>Async</h4>
+                </div>
+                <div class="comparison-content">
+                  <p><strong>Parsing:</strong> Continues</p>
+                  <p><strong>Download:</strong> Parallel</p>
+                  <p><strong>Execution:</strong> When ready</p>
+                  <p>
+                    <strong>Use Case:</strong> Independent scripts (analytics,
+                    ads)
+                  </p>
+                </div>
+              </div>
+
+              <div class="comparison-item">
+                <div class="comparison-header defer">
+                  <h4>Defer</h4>
+                </div>
+                <div class="comparison-content">
+                  <p><strong>Parsing:</strong> Continues</p>
+                  <p><strong>Download:</strong> Parallel</p>
+                  <p><strong>Execution:</strong> After DOM ready</p>
+                  <p><strong>Use Case:</strong> Scripts that need full DOM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Best Practices -->
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <div class="practices-grid">
+              <div class="practice-item">
+                <i class="fas fa-check-circle"></i>
+                <h4>Use defer for DOM-dependent scripts</h4>
+                <p>
+                  Scripts that manipulate DOM elements should use defer to
+                  ensure DOM is ready.
+                </p>
+              </div>
+              <div class="practice-item">
+                <i class="fas fa-rocket"></i>
+                <h4>Use async for independent scripts</h4>
+                <p>
+                  Analytics, ads, or tracking scripts that don't depend on DOM
+                  can use async.
+                </p>
+              </div>
+              <div class="practice-item">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h4>Be careful with script order</h4>
+                <p>
+                  Async scripts can execute in any order. Use defer when order
+                  matters.
+                </p>
+              </div>
+              <div class="practice-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <h4>Consider script placement</h4>
+                <p>
+                  Scripts in &lt;head&gt; with defer/async are often better for
+                  performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Overlay for mobile sidebar -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Tech Dev Guru. Empowering developers worldwide.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="lecture4.js"></script>
+  </body>
+</html>
