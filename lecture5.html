@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Dev Guru - JavaScript Tutorial Lecture 5</title>
+    <link rel="stylesheet" href="lecture5.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          <span>Tech Dev Guru</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>JavaScript Tutorial Series</h3>
+        <button class="close-sidebar" onclick="toggleSidebar()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h4>Getting Started</h4>
+          <a href="index.html" class="sidebar-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <h4>Core Concepts</h4>
+          <a href="lecture1.html" class="sidebar-link">
+            <i class="fas fa-play"></i>
+            <span>Lecture 1: JavaScript Introduction</span>
+            <div class="lecture-meta">
+              <small>What is JavaScript, Features, History</small>
+            </div>
+          </a>
+          <a href="lecture2.html" class="sidebar-link">
+            <i class="fas fa-play-circle"></i>
+            <span>Lecture 2: JavaScript Execution</span>
+            <div class="lecture-meta">
+              <small>Browser, HTML, Node.js</small>
+            </div>
+          </a>
+          <a href="lecture3.html" class="sidebar-link">
+            <i class="fas fa-server"></i>
+            <span>Lecture 3: Architecture & Rendering</span>
+            <div class="lecture-meta">
+              <small>Client-Server, Render Process</small>
+            </div>
+          </a>
+          <a href="lecture4.html" class="sidebar-link">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Lecture 4: Async Programming</span>
+            <div class="lecture-meta">
+              <small>Promises, Async/Await, Event Loop</small>
+            </div>
+          </a>
+          <a href="lecture5.html" class="sidebar-link active">
+            <i class="fas fa-box"></i>
+            <span>Lecture 5: JavaScript Variables</span>
+            <div class="lecture-meta">
+              <small>Variables, Data Types, Dynamic Typing</small>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="highlight">Lecture 5</span>
+              JavaScript Variables
+            </h1>
+            <p class="hero-description">
+              Learn about variables in JavaScript - named containers for storing
+              data values that can hold any type of value and change at runtime.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content" id="content">
+        <div class="container">
+          <h2 class="section-title">What is a Variable?</h2>
+
+          <div class="concept-card">
+            <div class="concept-header">
+              <div class="concept-icon">
+                <i class="fas fa-box"></i>
+              </div>
+              <div class="concept-info">
+                <h3>Variable Definition</h3>
+                <p>A named container for storing data values</p>
+              </div>
+            </div>
+            <div class="concept-content">
+              <p>
+                In JavaScript, a variable is a
+                <strong>named container</strong> for storing data values such as
+                numbers, strings, objects, functions, and more. Variables act as
+                a reference to data stored in memory, allowing you to access and
+                manipulate that data throughout your program.
+              </p>
+            </div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-header">
+              <div class="concept-icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+              <div class="concept-info">
+                <h3>Dynamic Typing</h3>
+                <p>Variables can hold any type of value</p>
+              </div>
+            </div>
+            <div class="concept-content">
+              <p>
+                Because JavaScript is <strong>dynamically typed</strong>, a
+                variable can hold any type of value and even change its type at
+                runtime. This flexibility allows the same variable to store
+                different types of data during program execution.
+              </p>
+              <div class="code-example">
+                <h4>Example:</h4>
+                <pre><code>let myVariable = 42;          // Number
+myVariable = "Hello World";   // String
+myVariable = true;            // Boolean
+myVariable = { name: "John" }; // Object</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="data-types-section">
+            <h3>JavaScript Data Types</h3>
+
+            <!-- Primitive Types -->
+            <div class="type-category">
+              <h4 class="category-title">
+                <i class="fas fa-atom"></i>
+                Primitive Types
+                <span class="category-subtitle">Stored by value</span>
+              </h4>
+              <div class="types-grid">
+                <div class="type-card primitive">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-question"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>undefined</h5>
+                      <span class="typeof-result">"undefined"</span>
+                    </div>
+                  </div>
+                  <p>Variable declared but not initialized</p>
+                  <code>let a;</code>
+                </div>
+
+                <div class="type-card primitive">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-ban"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>null</h5>
+                      <span class="typeof-result">"object"*</span>
+                    </div>
+                  </div>
+                  <p>Represents "no value" or "empty"</p>
+                  <code>let b = null;</code>
+                </div>
+
+                <div class="type-card primitive">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>boolean</h5>
+                      <span class="typeof-result">"boolean"</span>
+                    </div>
+                  </div>
+                  <p>Logical value: either true or false</p>
+                  <code>let c = true;</code>
+                </div>
+
+                <div class="type-card primitive">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-hashtag"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>number</h5>
+                      <span class="typeof-result">"number"</span>
+                    </div>
+                  </div>
+                  <p>Numeric value (integers and floats)</p>
+                  <code>let d = 3.14;</code>
+                </div>
+
+                <div class="type-card primitive">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-sort-numeric-up"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>bigint</h5>
+                      <span class="typeof-result">"bigint"</span>
+                    </div>
+                  </div>
+                  <p>Large integers beyond safe Number range</p>
+                  <code>let e = 123n;</code>
+                </div>
+
+                <div class="type-card primitive">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>string</h5>
+                      <span class="typeof-result">"string"</span>
+                    </div>
+                  </div>
+                  <p>Sequence of characters</p>
+                  <code>let f = "DevReady";</code>
+                </div>
+
+                <div class="type-card primitive">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-key"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>symbol</h5>
+                      <span class="typeof-result">"symbol"</span>
+                    </div>
+                  </div>
+                  <p>Unique, immutable primitive for object keys</p>
+                  <code>let g = Symbol("id");</code>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reference Types -->
+            <div class="type-category">
+              <h4 class="category-title">
+                <i class="fas fa-link"></i>
+                Reference Types (Objects)
+                <span class="category-subtitle">Stored by reference</span>
+              </h4>
+              <div class="types-grid">
+                <div class="type-card reference">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>Object</h5>
+                      <span class="typeof-result">"object"</span>
+                    </div>
+                  </div>
+                  <p>Unordered collection of key-value pairs</p>
+                  <code>let o = { x: 1, y: 2 };</code>
+                </div>
+
+                <div class="type-card reference">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-list"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>Array</h5>
+                      <span class="typeof-result">"object"</span>
+                    </div>
+                  </div>
+                  <p>Ordered list of values</p>
+                  <code>let arr = [1, 2, 3];</code>
+                </div>
+
+                <div class="type-card reference">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-function"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>Function</h5>
+                      <span class="typeof-result">"function"</span>
+                    </div>
+                  </div>
+                  <p>Callable object—block of code you can invoke</p>
+                  <code>function fn() {};</code>
+                </div>
+
+                <div class="type-card reference">
+                  <div class="type-header">
+                    <div class="type-icon">
+                      <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="type-info">
+                      <h5>Date</h5>
+                      <span class="typeof-result">"object"</span>
+                    </div>
+                  </div>
+                  <p>Represents a point in time</p>
+                  <code>let d = new Date();</code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="variable-declaration">
+            <h3>Variable Declaration Keywords</h3>
+            <div class="declaration-cards">
+              <div class="declaration-card">
+                <h4><code>let</code></h4>
+                <p>Block-scoped variable that can be reassigned</p>
+                <code>let count = 0;</code>
+              </div>
+              <div class="declaration-card">
+                <h4><code>const</code></h4>
+                <p>Block-scoped constant that cannot be reassigned</p>
+                <code>const PI = 3.14159;</code>
+              </div>
+              <div class="declaration-card">
+                <h4><code>var</code></h4>
+                <p>Function-scoped variable (legacy, not recommended)</p>
+                <code>var oldStyle = "avoid";</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Overlay for mobile sidebar -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Tech Dev Guru. Empowering developers worldwide.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="lecture5.js"></script>
+  </body>
+</html>
